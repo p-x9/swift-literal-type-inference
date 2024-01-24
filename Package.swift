@@ -4,6 +4,13 @@ import PackageDescription
 
 let package = Package(
     name: "LiteralTypeInference",
+    platforms: [
+        .macOS(.v10_15),
+        .iOS(.v13),
+        .tvOS(.v13),
+        .watchOS(.v6),
+        .macCatalyst(.v13)
+    ],
     products: [
         .library(
             name: "LiteralTypeInference",
@@ -27,7 +34,9 @@ let package = Package(
         .testTarget(
             name: "LiteralTypeInferenceTests",
             dependencies: [
-                "LiteralTypeInference"
+                "LiteralTypeInference",
+                .product(name: "SwiftSyntax", package: "swift-syntax"),
+                .product(name: "SwiftSyntaxBuilder", package: "swift-syntax")
             ]
         ),
     ]
