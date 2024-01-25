@@ -12,7 +12,7 @@ import SwiftSyntaxBuilder
 
 extension Sequence where Element == ExprSyntax {
     var inferredElementType: TypeSyntax? {
-        var expressions = Array(self.filter { !$0.isElementsEmpty })
+        var expressions = Array(self)
         let isOptional = expressions.map(\.kind).contains(.nilLiteralExpr)
         expressions = expressions.filter { !$0.isNil }
 
