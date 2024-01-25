@@ -201,7 +201,6 @@ extension LiteralTypeInferenceTests {
         expr: ExprSyntax,
         expected: TypeSyntax?
     ) {
-        print(expr.inferredType?.description)
         XCTAssertEqual(
             expr.inferredType?.description,
             expected?.description
