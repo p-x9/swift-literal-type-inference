@@ -15,13 +15,13 @@ let package = Package(
         .library(
             name: "LiteralTypeInference",
             targets: ["LiteralTypeInference"]
-        ),
+        )
     ],
     dependencies: [
         .package(
             url: "https://github.com/apple/swift-syntax.git",
             from: "509.0.0"
-        ),
+        )
     ],
     targets: [
         .target(
@@ -38,6 +38,6 @@ let package = Package(
                 .product(name: "SwiftSyntax", package: "swift-syntax"),
                 .product(name: "SwiftSyntaxBuilder", package: "swift-syntax")
             ]
-        ),
+        )
     ]
 )

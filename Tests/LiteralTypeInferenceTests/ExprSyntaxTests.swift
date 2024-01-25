@@ -88,4 +88,3 @@ extension ExprSyntaxTests {
         XCTAssertEqual(expr.isElementsEmpty, expected)
     }
 }
-
