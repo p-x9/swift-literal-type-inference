@@ -39,7 +39,7 @@ let expr: ExprSyntax = """
 // Get the type of expr from the `inferredType` property
 let type = expr.inferredType
 
-print(type?.expected?.formatted().description)
+print(type?.formatted().description)
 // => [String: [(Double?, Double?, String?, Bool)]]
 ```
 
