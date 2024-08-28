@@ -91,7 +91,7 @@ extension LiteralTypeInferenceTests {
             expr: """
             (1, 2.0, "3", true)
             """,
-            expected: "(Swift.Int,Swift.Double,Swift.String,Swift.Bool)"
+            expected: "(Swift.Int, Swift.Double, Swift.String, Swift.Bool)"
         )
     }
 }
@@ -154,7 +154,7 @@ extension LiteralTypeInferenceTests {
                 (nil, nil, nil, false)
             ]
             """,
-            expected: "[(Swift.Double?,Swift.Double?,Swift.String?,Swift.Bool?)]"
+            expected: "[(Swift.Double?, Swift.Double?, Swift.String?, Swift.Bool?)]"
         )
     }
 }
@@ -169,7 +169,7 @@ extension LiteralTypeInferenceTests {
                 3: "3"
             ]
             """,
-            expected: "[Swift.Int:Swift.String]"
+            expected: "[Swift.Int: Swift.String]"
         )
 
         checkInferredType(
@@ -180,7 +180,7 @@ extension LiteralTypeInferenceTests {
                 3: [3: "3"]
             ]
             """,
-            expected: "[Swift.Int:[Swift.Int:Swift.String?]]"
+            expected: "[Swift.Int: [Swift.Int: Swift.String?]]"
         )
 
         checkInferredType(
@@ -191,7 +191,7 @@ extension LiteralTypeInferenceTests {
                 3: [3: [[1.0, 2]]]
             ]
             """,
-            expected: "[Swift.Int:[Swift.Int:[[Swift.Double]]]]"
+            expected: "[Swift.Int: [Swift.Int: [[Swift.Double]]]]"
         )
     }
 }
@@ -202,7 +202,7 @@ extension LiteralTypeInferenceTests {
         expected: TypeSyntax?
     ) {
         XCTAssertEqual(
-            expr.inferredType?.description,
+            expr.inferredType?.formatted().description,
             expected?.description
         )
     }
